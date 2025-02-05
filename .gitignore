@@ -1,0 +1,21 @@
+# Fichiers Unity à ignorer
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]serSettings/
+Packages/
+.DS_Store
+*.suo
+*.svd
+*.user
+*.userprefs
+*.csproj
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
