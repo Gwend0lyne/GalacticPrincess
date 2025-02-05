@@ -957,6 +957,10 @@ MonoBehaviour:
     m_Bits: 64
   _groundCheck: {fileID: 651083264}
   _cam: {fileID: 963194228}
+  _groundCheckRadius: 0.3
+  _speed: 8
+  _turnSpeed: 1500
+  _jumpForce: 8
 --- !u!1 &786626920
 GameObject:
   m_ObjectHideFlags: 0

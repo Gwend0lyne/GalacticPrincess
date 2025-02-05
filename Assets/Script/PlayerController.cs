@@ -9,10 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _cam;
     //[SerializeField] private Animator _animator;
     
-    private float _groundCheckRadius = 0.3f;
-    private float _speed = 8;
-    private float _turnSpeed = 1500f;
-    private float _jumpForce = 500f;
+    public float _groundCheckRadius = 0.3f;
+    public float _speed = 8;
+    public float _turnSpeed = 1500f;
+    public float _jumpForce = 500f;
 
     private Rigidbody _rigidbody;
     private Vector3 _direction;

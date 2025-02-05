@@ -1,14 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gwend\\TD4\\",
+  "WorkspaceRootPath": "C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gwend\\TD4\\Assets\\Script\\GravityBody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\PlayerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\Assets\\Script\\GravityBody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Script\\GravityBody.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gwend\\TD4\\Assets\\CarController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CarController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gwend\\TD4\\Assets\\CarController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,10 +26,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\Assets\\Script\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\Assets\\Script\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Script\\PlayerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T10:41:01.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GravityBody.cs",
-              "DocumentMoniker": "C:\\Users\\gwend\\TD4\\Assets\\Script\\GravityBody.cs",
+              "DocumentMoniker": "C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\Assets\\Script\\GravityBody.cs",
               "RelativeDocumentMoniker": "Assets\\Script\\GravityBody.cs",
-              "ToolTip": "C:\\Users\\gwend\\TD4\\Assets\\Script\\GravityBody.cs",
+              "ToolTip": "C:\\Users\\gwend\\Desktop\\Polytech\\SI4-2\\IHM\\TD4\\Assets\\Script\\GravityBody.cs",
               "RelativeToolTip": "Assets\\Script\\GravityBody.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -35,12 +51,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CarController.cs",
               "DocumentMoniker": "C:\\Users\\gwend\\TD4\\Assets\\CarController.cs",
-              "RelativeDocumentMoniker": "Assets\\CarController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\TD4\\Assets\\CarController.cs",
               "ToolTip": "C:\\Users\\gwend\\TD4\\Assets\\CarController.cs",
-              "RelativeToolTip": "Assets\\CarController.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\TD4\\Assets\\CarController.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-31T15:01:14.679Z"
             }
