@@ -1,0 +1,84 @@
+# ========================================
+# 🚀 .gitignore pour Unity 🚀
+# ========================================
+
+# 📌 Dossiers à ignorer (fichiers générés par Unity)
+Library/
+Temp/
+Logs/
+UserSettings/
+MemoryCaptures/
+
+# 📌 Fichiers de cache et temporaires
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
+
+# 📌 Fichiers de Build
+Build/
+Builds/
+[Bb]uild/
+[Bb]uilds/
+bin/
+obj/
+
+# 📌 Fichiers spécifiques aux systèmes d’exploitation
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 📌 Paramètres utilisateur (ne pas partager)
+*.userprefs
+*.user
+*.swp
+
+# 📌 Versions locales de fichiers de configuration
+*.bak
+*.backup
+*.orig
+
+# 📌 Visual Studio / Rider / JetBrains
+.vscode/
+.idea/
+*.iml
+*.sublime*
+
+# 📌 Fichiers de logs Unity
+*.log
+*.stacktrace
+
+# 📌 Fichiers spécifiques au Cloud Build de Unity
+[Oo]bj/
+[Ll]ibrary/
+[Mm]emoryCaptures/
+[Uu]ser[Ss]ettings/
+
+# 📌 Fichiers de configuration JetBrains Rider
+.idea/
+
+# 📌 Fichiers et caches inutiles de Unity
+*.ilk
+*.map
+*.exp
+*.ipa
+*.apk
+*.unitypackage
+
+# 📌 Assets importés de l'Asset Store (exclus si besoin)
+# Assets/AssetStoreTools*
+
+# 📌 Ignorer les fichiers de test (optionnel)
+Tests/
+
+# 📌 Ne pas ignorer les fichiers essentiels pour Unity
+!Assets/
+!ProjectSettings/
+!Packages/
