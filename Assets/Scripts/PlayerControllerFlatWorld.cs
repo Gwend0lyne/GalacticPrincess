@@ -5,13 +5,16 @@ public class PlayerControllerFlatWorld : MonoBehaviour
 {
     private Vector2 _input;
     private Rigidbody _rb; 
+    private HealthBar healthBar;
 
     public float speed = 15f; // Vitesse de déplacement
     public float rotationSpeed = 200f; // Vitesse de rotation (contrôle la fluidité du pivotement)
+    public float maxSpeedMultiplier = 2f;
 
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        healthBar = FindObjectOfType<HealthBar>();
     }
 
     void Update()
@@ -21,7 +24,10 @@ public class PlayerControllerFlatWorld : MonoBehaviour
         float inputY = Input.GetAxisRaw("Vertical"); // Z/S
 
         _input = new Vector2(inputX, inputY).normalized; // Normaliser pour éviter les mouvements diagonaux trop rapides
-
+    
+        float speedMultiplier = 1f + (healthBar.GetValue() * (maxSpeedMultiplier - 1f));
+        float currentSpeed = speed * speedMultiplier;
+        
         // Calcul de la direction du mouvement basée sur l'orientation du joueur (local)
         Vector3 moveDirection = transform.forward * _input.y + transform.right * _input.x; // Déplacement basé sur la direction du joueur
 
@@ -29,7 +35,7 @@ public class PlayerControllerFlatWorld : MonoBehaviour
         if (_input.magnitude > 0.1f) // Si une touche de mouvement est pressée
         {
             // Déplacement fluide du joueur (mouvement sur X et Z)
-            Vector3 targetVelocity = moveDirection * speed;
+            Vector3 targetVelocity = moveDirection * currentSpeed;
             _rb.velocity = new Vector3(targetVelocity.x, 0, targetVelocity.z);
         }
         else
