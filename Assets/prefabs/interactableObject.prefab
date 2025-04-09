@@ -66,6 +66,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e82e73eae48a0b41868ef3cc65d48f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionText: {fileID: 0}
+  healthBar: {fileID: 0}
+  playerController: {fileID: 0}
 --- !u!1 &8716269846094011281
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +84,7 @@ GameObject:
   - component: {fileID: 5720223731666525361}
   m_Layer: 0
   m_Name: interactableObject
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

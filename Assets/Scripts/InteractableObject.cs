@@ -17,7 +17,6 @@ public class InteractableObject : MonoBehaviour
 
     private void Interact()
     {
-        Debug.Log("Objet interagi !");
         rend.material.color = Color.green; 
     }
 }

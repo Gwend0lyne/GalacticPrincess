@@ -8,6 +8,7 @@ public class InteractionTrigger : MonoBehaviour
     private bool isPlayerInside = false;
     [SerializeField] private GameObject interactionText;
     public HealthBar healthBar;
+    public PlayerControllerFlatWorld playerController;
 
     private void Start()
     {
@@ -17,10 +18,16 @@ public class InteractionTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Colliding with: " + other.name);
         if (other.CompareTag("Player"))
         {
             isPlayerInside = true;
             if (interactionText != null) interactionText.SetActive(true);
+        }
+        playerController = other.GetComponentInParent<PlayerControllerFlatWorld>();
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerControllerFlatWorld not found on the player object!");
         }
     }
 
@@ -38,10 +45,18 @@ public class InteractionTrigger : MonoBehaviour
         if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
         {
             OnInteract?.Invoke();
-            Debug.Log(healthBar);
             if (healthBar != null)
             {
                 healthBar.IncreaseValue(20f); // Augmente la barre
+            }
+            
+            if (playerController != null)
+            {
+                playerController.TriggerInteraction();
+            }
+            else
+            {
+                Debug.Log("ezez");
             }
         }
     }
