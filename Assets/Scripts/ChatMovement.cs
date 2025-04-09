@@ -83,4 +83,10 @@ public class ChatMovement : MonoBehaviour
 
         Debug.DrawRay(transform.position, _gravityBody.GravityDirection * rayDistance, _isGrounded ? Color.green : Color.red);
     }
+    
+    public bool IsGrounded()
+    {
+        return _isGrounded;
+    }
+
 }
