@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cube
   - Interactable
+  - Portail_to_planet_2
   layers:
   - Default
   - TransparentFX

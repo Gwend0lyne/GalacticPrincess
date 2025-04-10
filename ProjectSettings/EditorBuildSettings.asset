@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Planete1_outside.unity
     guid: 3acb99005dc8c0c4f961140bb8e39dd7
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Planete2.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
     path: Assets/Scenes/planet-3-imports.unity
