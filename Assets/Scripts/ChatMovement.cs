@@ -16,6 +16,7 @@ public class ChatMovement : MonoBehaviour
     
     private Orbit currentOrbit;
 
+    public Animator _animator;
 
     void Start()
     {
@@ -24,6 +25,9 @@ public class ChatMovement : MonoBehaviour
 
         // Active une meilleure détection des collisions
         _rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        _animator = GetComponent<Animator>();
+        _animator.SetBool("isInteracting", false);
+        
     }
 
     void FixedUpdate()
@@ -45,6 +49,16 @@ public class ChatMovement : MonoBehaviour
             Quaternion rightDirection = Quaternion.Euler(0f, _input.x * (_turnSpeed * Time.fixedDeltaTime), 0f);
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);
             _rigidbody.MoveRotation(newRotation);
+            Debug.Log("RUNNING");
+            bool debugValue = _animator.GetBool("isRunning");
+            Debug.Log($"Animator param check: isRunning = {debugValue}");
+
+            _animator.SetBool("isRunning", true);
+
+        }
+        else
+        {
+            //_animator.SetBool("isRunning", false);
         }
         ApplyDownforce();
         CheckGrounded(); 
