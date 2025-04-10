@@ -9,6 +9,7 @@ public class CollectibleObject : MonoBehaviour
         {
             player.CollectItem();
             Destroy(gameObject); // Fait disparaître l’objet collecté
+            Destroy(transform.parent.gameObject);
         }
     }
 }
