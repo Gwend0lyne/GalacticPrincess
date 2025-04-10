@@ -3204,6 +3204,7 @@ MonoBehaviour:
   maxDistanceToTarget: 5
   maxDistanceToReverse: 10
   randomJitterOnPosition: 0.5
+  canMove: 0
 --- !u!114 &479893067 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1162028590656043726, guid: 59178e521ba193e4ea2f51b6c4735288, type: 3}
@@ -7691,6 +7692,53 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6883828237178948107, guid: 5ffe2f637961d1140b30a5f18a900ef4, type: 3}
+--- !u!1 &1626048573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1626048575}
+  - component: {fileID: 1626048574}
+  m_Layer: 0
+  m_Name: RaceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1626048574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626048573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c18d87218f61a448dbafb1f01bc2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCar: {fileID: 1914426429}
+  aiCars:
+  - {fileID: 479893067}
+--- !u!4 &1626048575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626048573}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8141794, y: 19.916206, z: 18.658506}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1633251644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8279991335543769272, guid: 5ffe2f637961d1140b30a5f18a900ef4, type: 3}
@@ -8560,6 +8608,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5362759322266061627, guid: 5ffe2f637961d1140b30a5f18a900ef4, type: 3}
+--- !u!114 &1914426429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1162028590656043726, guid: 59178e521ba193e4ea2f51b6c4735288, type: 3}
+  m_PrefabInstance: {fileID: 1944138226676572272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52531dc4c05a7454f9e4b1f92833e66b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1915637849
 GameObject:
   m_ObjectHideFlags: 0
@@ -10090,3 +10149,4 @@ SceneRoots:
   - {fileID: 1675306481}
   - {fileID: 714186881}
   - {fileID: 479893063}
+  - {fileID: 1626048575}
