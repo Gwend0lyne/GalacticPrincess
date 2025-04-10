@@ -166,7 +166,7 @@ public class PlayerControllerFlatWorld : MonoBehaviour
         if (collision.gameObject.CompareTag("Cube"))
         {
             // Change de scène si la collision a lieu avec un objet ayant le tag "Cube"
-            SceneManager.LoadScene("Planete1_outside"); 
+            SceneManager.LoadScene("Planete1_inside"); 
         }
     }
     public void TriggerInteraction()

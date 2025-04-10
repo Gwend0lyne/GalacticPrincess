@@ -82,3 +82,10 @@ Tests/
 !Assets/
 !ProjectSettings/
 !Packages/
+
+
+Assets/Models/chaise.fbx
+Assets/Models/td3.blend
+Assets/Models/td3.blend1
+
+Assets/LeanTween/
