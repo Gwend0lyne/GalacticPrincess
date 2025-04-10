@@ -31,6 +31,7 @@ public class PlayerControllerFlatWorld : MonoBehaviour
         
         initialCameraPosition = mainCamera.transform.localPosition;
         initialCameraRotation = mainCamera.transform.localRotation;
+        _animator.SetBool("isInteracting", false);
     }
 
     void Update()
