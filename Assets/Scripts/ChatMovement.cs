@@ -7,6 +7,7 @@ public class ChatMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 7000f;
     public float downforce = 100f;
     [SerializeField] private LayerMask groundLayer;
+    private Animator _animator;
     
     
     private Rigidbody _rigidbody;
@@ -21,9 +22,11 @@ public class ChatMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _gravityBody = GetComponent<GravityBody>();
+        _animator = GetComponent<Animator>();
 
         // Active une meilleure détection des collisions
         _rigidbody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        _animator.SetBool("isInteracting", false);
     }
 
     void FixedUpdate()
@@ -32,6 +35,7 @@ public class ChatMovement : MonoBehaviour
 
         if (isRunning)
         {
+            _animator.SetBool("isRunning", true);
             // Définir une direction qui inclut la gravité
             Vector3 forwardDirection = Vector3.ProjectOnPlane(transform.forward, -_gravityBody.GravityDirection).normalized;
             
@@ -46,6 +50,11 @@ public class ChatMovement : MonoBehaviour
             Quaternion newRotation = Quaternion.Slerp(_rigidbody.rotation, _rigidbody.rotation * rightDirection, Time.fixedDeltaTime * 3f);
             _rigidbody.MoveRotation(newRotation);
         }
+        else
+        {
+            _animator.SetBool("isRunning", false);
+        }
+        
         ApplyDownforce();
         CheckGrounded(); 
     }
@@ -66,7 +75,7 @@ public class ChatMovement : MonoBehaviour
     {
         if (_isGrounded) // Vérifie si le joueur est au sol
         {
-            Debug.Log("Jumping");
+            Debug.Log("Jumping "+ _gravityBody.GravityDirection);
             _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
             _isGrounded = false;
         }
