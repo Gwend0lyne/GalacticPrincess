@@ -38,6 +38,8 @@ public class PlayerControllerFlatWorld : MonoBehaviour
     {
         if (isInteracting)
         {
+            _rb.velocity = new Vector3(0, 0, 0);
+            _animator.SetBool("isRunning", false);
             Debug.Log("Interacting");
 
             // Calculer le déplacement de la caméra sur l'axe X de -20f à 20f
