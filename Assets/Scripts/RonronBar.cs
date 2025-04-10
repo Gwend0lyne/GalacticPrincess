@@ -18,7 +18,7 @@ public class RonronBar : MonoBehaviour
             maxValue = playerCollector.totalToCollect;
         }
 
-        slider.maxValue = maxValue;
+        slider.maxValue = 70f;
         slider.value = 0f;
     }
 
@@ -45,5 +45,13 @@ public class RonronBar : MonoBehaviour
     public float GetValue()
     {
         return slider.value / maxValue;
+    }
+    
+    public void IncreaseValue(float amount)
+    {
+        currentValue += amount;
+        Debug.Log("currentValue " + currentValue);
+        Debug.Log("slider " + slider.value);
+        slider.value = currentValue;
     }
 }

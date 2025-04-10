@@ -6,12 +6,12 @@ public class PlayerControllerFlatWorld : MonoBehaviour
 {
     private Vector2 _input;
     private Rigidbody _rb; 
-    private HealthBar healthBar;
+    private RonronBar ronronBar;
     public bool isInteracting = false;
 
     public float speed = 15f; // Vitesse de déplacement
     public float rotationSpeed = 200f; // Vitesse de rotation (contrôle la fluidité du pivotement)
-    public float maxSpeedMultiplier = 2f;
+    public float maxSpeedMultiplier = 1f;
     private Animator _animator;
     
     public Camera mainCamera;
@@ -26,7 +26,7 @@ public class PlayerControllerFlatWorld : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        healthBar = FindObjectOfType<HealthBar>();
+        ronronBar = FindObjectOfType<RonronBar>();
         _animator = GetComponent<Animator>();
         
         initialCameraPosition = mainCamera.transform.localPosition;
@@ -73,7 +73,7 @@ public class PlayerControllerFlatWorld : MonoBehaviour
 
         _input = new Vector2(inputX, inputY).normalized; // Normaliser pour éviter les mouvements diagonaux trop rapides
     
-        float speedMultiplier = 1f + (healthBar.GetValue() * (maxSpeedMultiplier - 1f));
+        float speedMultiplier = 1f + (ronronBar.GetValue()/2 * (maxSpeedMultiplier - 1f));
         float currentSpeed = speed * speedMultiplier;
         
         // Calcul de la direction du mouvement basée sur l'orientation du joueur (local)

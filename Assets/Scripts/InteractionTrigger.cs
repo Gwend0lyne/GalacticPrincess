@@ -7,13 +7,13 @@ public class InteractionTrigger : MonoBehaviour
     public event Action OnInteract;
     private bool isPlayerInside = false;
     [SerializeField] private GameObject interactionText;
-    public HealthBar healthBar;
+    public RonronBar ronronBar;
     public PlayerControllerFlatWorld playerController;
 
     private void Start()
     {
         if (interactionText != null) interactionText.SetActive(false);
-        healthBar = FindObjectOfType<HealthBar>();
+        ronronBar = FindObjectOfType<RonronBar>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,9 +45,9 @@ public class InteractionTrigger : MonoBehaviour
         if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
         {
             OnInteract?.Invoke();
-            if (healthBar != null)
+            if (ronronBar != null)
             {
-                healthBar.IncreaseValue(20f); // Augmente la barre
+                ronronBar.IncreaseValue(10f); // Augmente la barre
             }
             
             if (playerController != null)
