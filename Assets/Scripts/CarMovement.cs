@@ -9,6 +9,8 @@ public class CarMovement : MonoBehaviour
     private Rigidbody _rigidbody;
     private Vector2 _input;
     private GravityBody _gravityBody;
+    
+    public bool canMove = false;
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class CarMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!canMove) return;
+        
         bool isRunning = _input.magnitude > 0.1f;
 
         if (isRunning)
