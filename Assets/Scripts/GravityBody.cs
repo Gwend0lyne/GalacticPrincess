@@ -28,6 +28,8 @@ public class GravityBody : MonoBehaviour
     
     void FixedUpdate()
     {
+        _gravityAreas.RemoveAll(area => area == null || !area.enabled);
+        
         _rigidbody.AddForce(GravityDirection * (GRAVITY_FORCE * Time.fixedDeltaTime), ForceMode.Acceleration);
 
         Quaternion upRotation = Quaternion.FromToRotation(transform.up, -GravityDirection);
@@ -37,11 +39,22 @@ public class GravityBody : MonoBehaviour
 
     public void AddGravityArea(GravityArea gravityArea)
     {
-        _gravityAreas.Add(gravityArea);
+        if (_gravityAreas == null)
+            _gravityAreas = new List<GravityArea>();
+
+        if (!_gravityAreas.Contains(gravityArea))
+        {
+            _gravityAreas.Add(gravityArea);
+        }
+        Debug.Log(_gravityAreas,gravityArea);
     }
+
 
     public void RemoveGravityArea(GravityArea gravityArea)
     {
         _gravityAreas.Remove(gravityArea);
+        Debug.Log("DANS LE REMOVE"+_gravityAreas,gravityArea);
     }
+    
+    
 }
