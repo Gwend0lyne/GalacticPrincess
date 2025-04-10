@@ -1,13 +1,18 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody))]
 public class WallCollisionHandler : MonoBehaviour
 {
+    //PAS UTILISER
     [SerializeField] private LayerMask wallLayer; // Set the "Walls" layer in the Inspector
     [SerializeField] private float maxClimbAngle = 45f; // Maximum angle that is climbable
 
     private Rigidbody rb;
+    
+    public PlayerCollector playerCollector;
+    public UIBanner noPowerBanner;
+
 
     void Start()
     {
@@ -39,12 +44,16 @@ public class WallCollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        // Check if the object collided with has the wallLayer
         if (((1 << collision.gameObject.layer) & wallLayer) != 0)
         {
-            // Reset velocity to stop traversing walls
-            Debug.Log("Checkpoint entered");
+            Debug.Log("Mur touché");
             rb.velocity = Vector3.zero;
+
+            if (playerCollector != null && !playerCollector.HasPower())
+            {
+                if (noPowerBanner != null)
+                    noPowerBanner.ShowBanner();
+            }
         }
     }
 }

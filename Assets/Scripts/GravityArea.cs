@@ -29,4 +29,5 @@ public abstract class GravityArea : MonoBehaviour
             gravityBody.RemoveGravityArea(this);
         }
     }
+
 }

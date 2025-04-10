@@ -13,6 +13,9 @@ public class ChatMovement : MonoBehaviour
     private Vector2 _input;
     private GravityBody _gravityBody;
     private bool _isGrounded = false;
+    
+    private Orbit currentOrbit;
+
 
     void Start()
     {
@@ -68,21 +71,55 @@ public class ChatMovement : MonoBehaviour
             _isGrounded = false;
         }
     }
-    
     void CheckGrounded()
     {
-        float rayDistance = 3.2f; 
+        float rayDistance = 3.2f;
+
         if (Physics.Raycast(transform.position, _gravityBody.GravityDirection, out RaycastHit hit, rayDistance, groundLayer))
         {
             _isGrounded = true;
+
+            Orbit orbit = hit.transform.GetComponentInParent<Orbit>();
+            if (orbit != null)
+            {
+                // Si c’est une nouvelle planète, arrête sa rotation
+                if (orbit != currentOrbit)
+                {
+                    // Redémarre l'ancienne planète si on en quitte une autre
+                    if (currentOrbit != null)
+                        currentOrbit.SetOrbitActive(true);
+
+                    orbit.SetOrbitActive(false);
+                    currentOrbit = orbit;
+
+                    Debug.Log($"🚫 Arrêt de l'orbite : {orbit.name}");
+                }
+            }
+            else if (currentOrbit != null)
+            {
+                // On est au sol, mais plus sur une planète avec Orbit → relancer l'ancienne si elle existe
+                currentOrbit.SetOrbitActive(true);
+                Debug.Log($"▶️ Reprise de l'orbite : {currentOrbit.name}");
+                currentOrbit = null;
+            }
         }
         else
         {
             _isGrounded = false;
+
+            // Quand on n’est plus au sol, on relance la planète si nécessaire
+            if (currentOrbit != null)
+            {
+                currentOrbit.SetOrbitActive(true);
+                Debug.Log($"🕊️ Reprise de l'orbite : {currentOrbit.name}");
+                currentOrbit = null;
+            }
         }
 
         Debug.DrawRay(transform.position, _gravityBody.GravityDirection * rayDistance, _isGrounded ? Color.green : Color.red);
     }
+
+
     
     public bool IsGrounded()
     {
