@@ -23,9 +23,9 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1.21
+  m_AmbientIntensity: 0.6
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.7509433, g: 0.5683946, b: 0.19127794, a: 1}
+  m_SubtractiveShadowColor: {r: 0.19215684, g: 0.37062773, b: 0.7490196, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: cdbb40e11399e4a17882ada20a1b896a, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -1830,7 +1830,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8961359253771211100, guid: c4bb969e31e7d274b849b0a168da311c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1332226670}
   m_SourcePrefab: {fileID: 100100000, guid: c4bb969e31e7d274b849b0a168da311c, type: 3}
 --- !u!1001 &1244799684
 PrefabInstance:
@@ -2269,6 +2272,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e4ed402b28b96d4ca56cf5aabbce96f, type: 3}
+--- !u!1 &1332226666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8961359253771211100, guid: c4bb969e31e7d274b849b0a168da311c, type: 3}
+  m_PrefabInstance: {fileID: 1156768207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1332226670
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332226666}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7196802604745430461, guid: c4bb969e31e7d274b849b0a168da311c, type: 3}
 --- !u!4 &1474634557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8446246251672429844, guid: 4cc327b50ea3ff747b3702e4bd904939, type: 3}

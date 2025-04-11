@@ -11,9 +11,14 @@ public class CarMovement : MonoBehaviour
     private GravityBody _gravityBody;
     
     public bool canMove = false;
+    
+    [SerializeField] private Transform _visualCar; // Drag ton enfant "Voiture" ici dans l’inspecteur
+    [SerializeField] private float _driftAngle = 15f; // Max roll angle
+    [SerializeField] private float _driftSmooth = 5f;
 
     void Start()
     {
+        Debug.Log("_visualcar " + _visualCar.name);
         _rigidbody = GetComponent<Rigidbody>();
         _gravityBody = GetComponent<GravityBody>();
 
@@ -41,6 +46,7 @@ public class CarMovement : MonoBehaviour
             _rigidbody.MoveRotation(newRotation);
         }
         ApplyDownforce();
+        ApplyVisualDrift();
     }
 
     void ApplyDownforce()
@@ -55,12 +61,25 @@ public class CarMovement : MonoBehaviour
         _input = input;
     }
     
-    public void ForceUpdateMovement()
+    void ApplyVisualDrift()
     {
-        if (!canMove)
+        if (_visualCar == null) return;
+
+        // Calcul d’un angle Z basé sur l’input horizontal
+        float targetZRotation = -_input.x * _driftAngle; // négatif pour pencher du bon côté
+        Quaternion targetRotation;
+        
+        if (_visualCar.name == "trueno ai")
         {
-            canMove = true;
-            Debug.Log("Mouvement forcé.");
+            targetRotation = Quaternion.Euler(-90f, 0f, -90f + targetZRotation);
         }
+        else
+        {
+            targetRotation = Quaternion.Euler(0f, 0f, targetZRotation);
+        }
+        
+        
+
+        _visualCar.localRotation = Quaternion.Slerp(_visualCar.localRotation, targetRotation, Time.fixedDeltaTime * _driftSmooth);
     }
 }
