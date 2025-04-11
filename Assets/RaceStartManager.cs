@@ -5,7 +5,7 @@ using UnityEngine;
 public class RaceStartManager : MonoBehaviour
 {
     public CarMovement playerCar;
-    public List<CarMovement> aiCars;
+    public List<AIControls> aiCars;
 
     void Start()
     {
