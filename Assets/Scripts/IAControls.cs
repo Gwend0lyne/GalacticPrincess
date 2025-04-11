@@ -17,7 +17,8 @@ public class AIControls : MonoBehaviour
     public float maxDistanceToReverse = 10f;
 
     public float randomJitterOnPosition = .5f;
-
+    
+    public bool canMove = false;
     void Awake()
     {
         // TODO : Initialize waypoints list by finding all Transform waypoints inside waypointsHolder
@@ -38,6 +39,14 @@ public class AIControls : MonoBehaviour
 
     void Update()
     {
+        if (!canMove)
+        {
+            onInput?.Invoke(Vector2.zero); // force IA à rester immobile
+            return;
+        }
+        Debug.Log("canMove");
+        // ... (reste du code normal ici)
+        
         // Change to next waypoint if reached current waypoint
         float distanceToTarget = Vector3.Distance(transform.position, nextWaypointPosition);
         if (distanceToTarget < maxDistanceToTarget)
@@ -68,4 +77,6 @@ public class AIControls : MonoBehaviour
         // This "jitter" add a little randomness around the waypoint to make the AI slightly more human 
         nextWaypointPosition = nextWaypoint.position + new Vector3(Random.Range(-randomJitterOnPosition, randomJitterOnPosition), 0, Random.Range(-randomJitterOnPosition, randomJitterOnPosition));
     }
+    
+    
 }

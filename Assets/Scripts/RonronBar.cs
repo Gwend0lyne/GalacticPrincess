@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class RonronBar : MonoBehaviour
 {
     [SerializeField] private Slider slider;
-    public float fillSpeed = 50f;
+    public float fillSpeed = 1f;
 
     private PlayerCollector playerCollector;
     private float currentValue = 0f;
@@ -16,9 +16,12 @@ public class RonronBar : MonoBehaviour
         if (playerCollector != null)
         {
             maxValue = playerCollector.totalToCollect;
+            Debug.Log("playerCollector.totalToCollect " + playerCollector.totalToCollect);
         }
-
-        slider.maxValue = 70f;
+        else
+        {
+            slider.maxValue = 70f;
+        }
         slider.value = 0f;
     }
 
@@ -26,19 +29,18 @@ public class RonronBar : MonoBehaviour
     {
         if (playerCollector != null)
         {
-            float targetValue = playerCollector.GetCollectedCount(); // Nouveau getter qu'on va créer
+            // On obtient le nombre d'items collectés
+            float targetValue = playerCollector.GetCollectedCount();
             targetValue = Mathf.Clamp(targetValue, 0f, maxValue);
 
+            // Si l'élément a été collecté, on incrémente la barre
             if (slider.value < targetValue)
             {
-                slider.value += fillSpeed * Time.deltaTime;
-            }
-            else if (slider.value > targetValue)
-            {
-                slider.value = targetValue; // instant snap si on dépasse
+                // On met à jour la barre pour qu'elle augmente en fonction du nombre d'éléments collectés
+                slider.value = (targetValue / maxValue) * slider.maxValue;
             }
 
-            currentValue = targetValue;
+            Debug.Log($"Target Value: {targetValue}, Max Value: {maxValue}, Slider Value: {slider.value}");
         }
     }
 

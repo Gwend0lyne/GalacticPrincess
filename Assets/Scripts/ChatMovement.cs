@@ -75,7 +75,7 @@ public class ChatMovement : MonoBehaviour
     {
         if (_isGrounded) // Vérifie si le joueur est au sol
         {
-            Debug.Log("Jumping "+ _gravityBody.GravityDirection);
+            Debug.Log("Jumping");
             _rigidbody.AddForce(-_gravityBody.GravityDirection * jumpForce, ForceMode.Impulse);
             _isGrounded = false;
         }
