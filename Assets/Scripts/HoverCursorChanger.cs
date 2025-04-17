@@ -10,6 +10,7 @@ public class HoverCursorChanger : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        
         Cursor.SetCursor(hoverCursorTexture, hotSpot, CursorMode.Auto);
     }
 
@@ -20,6 +21,7 @@ public class HoverCursorChanger : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("OnPointerClick");
         SceneManager.LoadScene("Planete1_inside 1");
     }
 }
