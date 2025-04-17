@@ -1164,7 +1164,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -4279,7 +4279,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 3.9128275, y: 2.4246995, z: 9.386786}
   m_Center: {x: 0.03374648, y: -0.15169531, z: -0.012398243}
@@ -11452,7 +11452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7542689603738929027, guid: 59178e521ba193e4ea2f51b6c4735288, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7542689603738929027, guid: 59178e521ba193e4ea2f51b6c4735288, type: 3}
       propertyPath: m_Center.x
@@ -11527,7 +11527,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 4.3046064, y: 2.586743, z: 10.01005}
   m_Center: {x: -0.1611216, y: -0.47089213, z: 2.7611437}
