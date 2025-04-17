@@ -4239,7 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastCheckpoint: -1
-  currentLap: -1
+  currentLap: 0
 --- !u!64 &479893073
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11268,7 +11268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1162028590656043726, guid: 59178e521ba193e4ea2f51b6c4735288, type: 3}
       propertyPath: downforce
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1162028590656043726, guid: 59178e521ba193e4ea2f51b6c4735288, type: 3}
       propertyPath: _turnSpeed
