@@ -8,6 +8,7 @@ public class HoverScaleEffect : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public float tweenTime = 0.2f;
 
     void Start() {
+        
         originalScale = transform.localScale;
     }
 
